@@ -5,11 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Multigram</title>
+    <title>Multi</title>
   </head>
   <body>
     <h1>Account Page</h1>
+    <div class="navbar2">
+      <h1>User Account</h1>
+  </div>
 
-    <script src="script.js"></script>
+  <div class="user-info">
+      <img src="https://picsum.photos/200" alt="User Profile" class="profile-image">
+      <div class="user-details">
+          <h2>User Name</h2>
+          <p>Bio: This is a sample user bio.</p>
+      </div>
+  </div>
+
+  <div class="gallery">
+      <!-- Gallery images will be injected here -->
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const gallery = document.querySelector('.gallery');
+
+        function loadGalleryItems() {
+            console.log('Loading gallery items...');
+            for (let i = 0; i < 8; i++) { // Load 8 images
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                
+                // Sample content - replace with actual data
+                galleryItem.innerHTML = `
+                    <img src="https://picsum.photos/200" alt="Gallery Image">
+                `;
+                
+                gallery.appendChild(galleryItem);
+            }
+        }
+
+        // Load initial gallery items
+        loadGalleryItems();
+    });
+</script>
   </body>
 </html>
